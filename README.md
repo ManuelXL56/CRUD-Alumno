@@ -45,7 +45,9 @@ kubectl apply -f ./namespaces
 
 kubectl apply -f .
 
-El sistema se ejecutara y contrura en automatico. Solo espere su ejeucion 
+
+
+#El sistema se ejecutara y contrura en automatico. Solo espere su ejeucion 
 
 Al Finalizar en un navegador al entrar en https://localhost/ o https://127.0.0.1/ deberia mostrar el sistemas ejecutandose
 
