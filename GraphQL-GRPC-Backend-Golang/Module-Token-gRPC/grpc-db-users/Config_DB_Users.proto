@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+package users_db;
+
+option go_package = "Module.com/JWT-Token/grpc-db-users";
+
+service RouteGuide {
+  rpc Login (LoginRequest) returns (LoginReply) {}
+  rpc SearchUser (Data) returns (DataUser) {}
+}
+
+message LoginRequest {
+  string matricule = 1;
+  string password = 2;
+}
+
+message LoginReply {
+  string result = 1;
+  string role = 2;
+}
+
+message DataUser {
+  string matricule = 1;
+  string password = 2;
+  string full_Name = 3;
+  string mail = 4;
+  string direction = 5;
+  string phone = 6;
+  string role = 7;
+}
+
+message Data {
+  string data = 1;
+}

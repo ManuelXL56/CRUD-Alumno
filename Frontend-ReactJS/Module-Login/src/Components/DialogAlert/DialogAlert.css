@@ -1,0 +1,22 @@
+.DialogAlert {
+  background: #CACFD2;
+  border: none;
+  width: 400px;
+  height: 250px;
+
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.DialogAlert svg {
+  margin: 0;
+  padding: 0;
+}
+
+.DialogAlert h1, .DialogAlert h2 {
+  margin: 0;
+  padding: 0;
+  font-size: larger;
+}

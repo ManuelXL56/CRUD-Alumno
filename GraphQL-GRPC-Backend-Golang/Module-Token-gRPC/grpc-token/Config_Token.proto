@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package grpc_token;
+
+option go_package = "Module.com/JWT-Token/grpc-token";
+
+service RouteGuide {
+  rpc CreateToken(DataTokenRequest) returns (Data) {}
+  rpc ValidateToken(DataTokenRequest) returns (DataTokenReply) {}
+}
+
+message Data {
+	string data = 1;
+}  
+
+message DataTokenRequest {
+  string publicKey = 1;
+  string data = 2;
+}
+
+message DataTokenReply {
+	string matricule = 1;
+	string result = 2;
+}  

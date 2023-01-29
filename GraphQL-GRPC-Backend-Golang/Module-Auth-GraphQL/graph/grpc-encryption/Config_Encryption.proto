@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package grpc_encryption;
+
+option go_package = "Module.com/GraphQL-Server/graph/grpc-encryption";
+
+service RouteGuide {
+  rpc GetKeysRSA(Empty) returns (KeysRSA) {}
+}
+
+message Empty {}
+
+message KeysRSA {
+	string privateKey = 1;
+	string publicKey = 2;
+}

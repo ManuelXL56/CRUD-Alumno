@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pods-backend-grpc
+  namespace: production
+spec:
+  selector:
+    matchLabels:
+      app: backend-grpc
+  template:
+    metadata:
+      labels:
+        app: backend-grpc
+    spec:
+      containers:
+      # Module Encryption
+      - name: module-encryption-grpc
+        image: golang/module-encryption-grpc
+        resources:
+          limits:
+            memory: "256Mi"
+            cpu: "200m"
+        ports:
+        - containerPort: 50051
+        imagePullPolicy: Never
+      # Image Users
+      - name: module-db-users-grpc
+        image: python/module-db-users-grpc
+        resources:
+          limits:
+            memory: "256Mi"
+            cpu: "200m"
+        ports:
+        - containerPort: 50052
+        imagePullPolicy: Never
+      # Image Products
+      - name: module-token-grpc
+        image: golang/module-token-grpc
+        resources:
+          limits:
+            memory: "256Mi"
+            cpu: "200m"
+        ports:
+        - containerPort: 50053
+        imagePullPolicy: Never
+      restartPolicy: Always

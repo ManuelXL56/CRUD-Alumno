@@ -1,0 +1,31 @@
+#Container404 {
+    width: 100%;
+    color: black;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.SubContainer404 {
+    display: block;
+    color: white;
+    font-family: "Mystical Woods Rough Script";
+}
+
+.SubContainer404 h1 {
+    font-size: 6rem;
+}
+
+.SubContainer404 h2 {
+    font-size: 4rem;
+}
+
+@media only screen and (max-width: 600px) {
+    .SubContainer404 h1 {
+        font-size: 5rem;
+    }
+    
+    .SubContainer404 h2 {
+        font-size: 3rem;
+    }
+}

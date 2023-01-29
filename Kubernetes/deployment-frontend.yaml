@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pods-fontend
+  namespace: production
+spec:
+  selector:
+    matchLabels:
+      app: frontend
+  template:
+    metadata:
+      labels:
+        app: frontend
+    spec:
+      containers:
+      # Login
+      - name: login
+        image: nodejs/login
+        resources:
+          limits:
+            memory: "512Mi"
+            cpu: "250m"
+        ports:
+        - containerPort: 3000
+        imagePullPolicy: Never
+      # Mannager GRUD
+      - name: module-mannager-grud
+        image: nodejs/module-manager-grud
+        resources:
+          limits:
+            memory: "512Mi"
+            cpu: "250m"
+        ports:
+        - containerPort: 3001
+        imagePullPolicy: Never
+      restartPolicy: Always

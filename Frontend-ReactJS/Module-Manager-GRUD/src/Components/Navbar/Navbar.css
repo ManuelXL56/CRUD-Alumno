@@ -1,0 +1,60 @@
+#Navbar .isActive {
+    text-decoration: none;
+    color: white;
+    background-color: #AAAAAB;
+    border: none;
+    border-radius: 50px;
+}
+
+#Navbar {
+    position: relative;
+    margin: 0;
+    padding: 0.5rem;
+    background: #6e6c6c;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    z-index: 10;
+    max-height: 76px;
+}
+
+#Navbar ul a, #Navbar li {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    display: inline-block;
+    padding: 9px 10px;
+}
+
+#Navbar .User {
+    order: 3;
+    margin: 0;
+}
+
+#Navbar .Logo {
+    order: 2;
+    margin: auto;
+}
+
+#Navbar nav ul {
+    margin: 0;
+    padding: 0;
+}
+
+#Navbar .Bars svg {
+    text-decoration: none;
+    color: white;
+    font-size: xx-large;
+    font-weight: bold;
+    margin-left: 1rem;
+}
+
+#Navbar .Bars a svg:hover {
+    background-color: #D7D7D7;
+    padding: 9px 25px;
+    border: none;
+    border-radius: 0;
+    transition: all 0.3s ease 0s;
+    border-radius: 50px;
+}

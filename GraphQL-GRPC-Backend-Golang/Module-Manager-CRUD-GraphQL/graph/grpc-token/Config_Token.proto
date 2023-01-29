@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package grpc_token;
+
+option go_package = "Module.com/GraphQL-Server/graph/grpc-token";
+
+service RouteGuide {
+  rpc ValidateToken(DataTokenRequest) returns (DataTokenReply) {}
+}
+
+message DataTokenRequest {
+  string publicKey = 1;
+  string data = 2;
+}
+
+message DataTokenReply {
+	string username = 1;
+	string result = 2;
+}  

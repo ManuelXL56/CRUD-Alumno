@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+package users_db;
+
+option go_package = "Module.com/GraphQL-Server/grpc-db-users";
+
+service RouteGuide {
+  rpc SearchUser (Data) returns (DataUser) {}
+  rpc RegisterUser (DataUser) returns (Data) {}
+  rpc UpdateUser (DataUser_Update) returns (Data) {}
+  rpc DeleteUser (Data) returns (Data) {}
+}
+
+message DataUser {
+  string matricule = 1;
+  string password = 2;
+  string full_Name = 3;
+  string mail = 4;
+  string direction = 5;
+  string phone = 6;
+  string role = 7;
+}
+
+message DataUser_Update {
+  string old_matricule = 1;
+  string new_matricule = 2;
+  string password = 3;
+  string full_Name = 4;
+  string mail = 5;
+  string direction = 6;
+  string phone = 7;
+  string role = 8;
+}
+
+message Data {
+  string data = 1;
+}

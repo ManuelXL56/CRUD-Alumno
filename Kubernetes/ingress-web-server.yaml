@@ -1,0 +1,47 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: web-server
+  namespace: production
+  labels:
+    name: ingress
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    cert-manager.io/cluster-issuer: "letsencrypt-staging"
+spec:
+  tls:
+  - hosts:
+    - localhost
+    secretName: key-pair
+  rules:
+  - host: localhost
+    http:
+      paths:
+      - path: /Login/
+        pathType: Prefix
+        backend:
+          service:
+            name: svc-frontend
+            port: 
+              number: 3000
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: svc-frontend
+            port: 
+              number: 3001
+      - path: /graphql/auth
+        pathType: Prefix
+        backend:
+          service:
+            name: svc-backend-graphql
+            port: 
+              number: 8080
+      - path: /graphql/Manager-GRUD
+        pathType: Prefix
+        backend:
+          service:
+            name: svc-backend-graphql
+            port: 
+              number: 8081

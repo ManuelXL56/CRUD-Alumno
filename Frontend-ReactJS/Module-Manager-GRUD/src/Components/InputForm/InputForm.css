@@ -1,0 +1,19 @@
+.InputForm {
+    background-color: #ECF0F1;
+    border: none;
+    border-radius: 25px;
+    color: black;
+    @apply mr-2 mb-5 w-full max-w-xs;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}

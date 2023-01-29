@@ -1,0 +1,11 @@
+.tabs__menu {
+     @apply grid grid-flow-row gap-y-4 w-11/12 min-w-max max-w-screen-lg overflow-auto mb-5;
+}
+
+.tabs__label {
+    @apply inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-300 hover:border-gray-300 border-gray-300 select-none;
+}
+
+.tabs__content {
+    @apply hidden p-4 rounded-lg bg-zinc-700 w-11/12 m-auto text-black;
+}

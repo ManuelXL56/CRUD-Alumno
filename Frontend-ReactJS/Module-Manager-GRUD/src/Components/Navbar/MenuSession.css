@@ -1,0 +1,40 @@
+#MenuSession {
+    position: absolute;
+    background-color: #0D0D0D;
+    right: 0;
+}
+
+#MenuSession ul {
+    margin: 0;
+    padding: 0;
+}
+
+#MenuSession ul a {
+    text-decoration: none;
+}
+
+#MenuSession ul a li {
+    list-style-type: none;
+    color: white;
+    font-size: larger;
+    font-weight: bold;
+    text-align: center;
+    padding: 9px 12px;
+}
+
+#MenuSession ul li:hover {
+    background-color: #b9b9b9;
+    padding: 15px 25px;
+    color: black;
+    transition: all 300ms ease 200ms;
+}
+
+/* Activation */
+
+.Menu-Session-Activate {
+    display: block;
+}
+
+.Menu-Session-Desactive {
+    display: none;
+}

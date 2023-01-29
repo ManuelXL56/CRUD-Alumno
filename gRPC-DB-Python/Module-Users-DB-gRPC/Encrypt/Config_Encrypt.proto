@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package grpc_encryption;
+
+option go_package = "Module.com/GraphQL-Server/graph/grpc-encryption";
+
+service RouteGuide {
+  rpc GetKeysAES(Empty) returns (KeysAES) {}
+  rpc EncryptionAES(KeysAES_Data) returns (Data) {}
+  rpc DecryptionAES(KeysAES_Data) returns (Data) {}
+}
+
+message Empty {}
+
+message KeysAES {
+	string key = 1;
+	string nonce = 2;
+}
+
+message KeysAES_Data {
+	KeysAES keys = 1;
+	string data = 2;
+} 
+
+message Data {
+	string data = 1;
+} 

@@ -1,0 +1,43 @@
+syntax = "proto3";
+
+package grpc_encryption;
+
+option go_package = "Module.com/JWT-Token/grpc-encryption";
+
+service RouteGuide {
+  rpc GetKeysRSA(Empty) returns (KeysRSA) {}
+  rpc EncryptionRSA(DataRSA) returns (Data) {}
+  rpc DecryptionRSA(DataRSA) returns (Data) {}
+  rpc DecodeRSAPrivateKeyFromPemString(KeysRSA) returns (KeysRSA) {}
+  rpc DecodeRSAPublicKeyFromPemString(KeysRSA) returns (KeysRSA) {}
+  rpc GetKeysAES(Empty) returns (KeysAES) {}
+  rpc EncryptionAES(KeysAES_Data) returns (Data) {}
+  rpc DecryptionAES(KeysAES_Data) returns (Data) {}
+}
+
+message Empty {}
+
+message KeysAES {
+	string key = 1;
+	string nonce = 2;
+	string data = 3;
+} 
+
+message KeysAES_Data {
+	KeysAES keys = 1;
+	string data = 2;
+} 
+
+message Data {
+	string data = 1;
+}  
+
+message KeysRSA {
+	string privateKey = 1;
+	string publicKey = 2;
+} 
+
+message DataRSA {
+	string publicKey = 1;
+	string data = 2;
+}

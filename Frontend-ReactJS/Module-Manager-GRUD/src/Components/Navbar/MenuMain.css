@@ -1,0 +1,85 @@
+#MenuBar .isActive li {
+    background-color: #AAAAAB;
+    color: white;
+}
+
+#MenuBar {
+    position: absolute;
+    background-color: #0D0D0D;
+    font-weight: bold;
+    height: 100%;
+    top: 0px;
+}
+
+#MenuBar ul {
+    padding-left: 0;
+}
+
+#MenuBar ul .Buttons {
+    padding: 12px 12px;
+}
+
+#MenuBar .Bars {
+    font-size: xx-large;
+    font-weight: bold;
+    padding-left: 24px;
+    padding-bottom: 6px;
+    height: 76px;
+}
+
+#MenuBar .Bars {
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+#MenuBar .Buttons {
+    font-size: larger;
+    font-weight: bold;
+}
+
+#MenuBar ul, #MenuBar a {
+    text-decoration: none;
+    color: white;
+    list-style-type: none;
+}
+
+#MenuBar ul .Bars svg:hover {
+    background-color: #D7D7D7;
+    padding: 9px 25px;
+    border-radius: 0;
+    transition: all 300ms ease 200ms;
+    border-radius: 50px;
+}
+
+#MenuBar ul .Buttons:hover {
+    background-color: #b9b9b9;
+    padding: 15px 25px;
+    color: black;
+    transition: all 300ms ease 200ms;
+}
+
+/* Activation */
+
+.Menu-Activate {
+    max-width: 200px;
+    width: 170px;
+    transition: width 300ms;
+}
+
+.Menu-Activate ul {
+    visibility: visible;
+    opacity: 1; 
+    transition: visibility 0s linear 300ms, opacity 300ms;
+}
+
+.Menu-Desactive {
+    max-width: 200px;
+    min-width: 0px;
+    width: 0%;
+    transition: width 300ms;
+}
+
+.Menu-Desactive ul {
+    visibility: hidden;
+    opacity: 0;
+}

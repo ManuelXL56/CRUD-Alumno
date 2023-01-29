@@ -1,0 +1,39 @@
+CREATE DATABASE School;
+USE School;
+
+CREATE TABLE `DataUser` (
+  `ID_DataUser` INT PRIMARY KEY AUTO_INCREMENT,
+  `Full_Name` TEXT NOT NULL,
+  `Mail` TEXT NOT NULL,
+  `Direction` TEXT NOT NULL,
+  `Phone` TEXT NOT NULL
+);
+
+CREATE TABLE `Users` (
+  `ID_User` INT PRIMARY KEY AUTO_INCREMENT,
+  `ID_DataUser` INT NOT NULL,
+  `ID_Account` INT NOT NULL
+);
+
+CREATE TABLE `Accounts` (
+  `ID_Account` INT PRIMARY KEY AUTO_INCREMENT,
+  `Matricule` TEXT NOT NULL,
+  `Password` TEXT NOT NULL,
+  `ID_Role` INT NOT NULL
+);
+
+CREATE TABLE `Roles` (
+  `ID_Role` INT PRIMARY KEY AUTO_INCREMENT,
+  `Role` TEXT NOT NULL
+);
+
+ALTER TABLE `Users` ADD FOREIGN KEY (`ID_DataUser`) REFERENCES `DataUser` (`ID_DataUser`);
+
+ALTER TABLE `Users` ADD FOREIGN KEY (`ID_Account`) REFERENCES `Accounts` (`ID_Account`);
+
+ALTER TABLE `Accounts` ADD FOREIGN KEY (`ID_Role`) REFERENCES `Roles` (`ID_Role`);
+
+INSERT INTO `Roles` (`Role`) SELECT * FROM (SELECT "pSyuPK-8EUNPAs3EfgFCvWLxrtI2" AS `Role`) AS temp WHERE NOT EXISTS (SELECT `Role` FROM `Roles` WHERE `Role` = "8EUNPAs3EfgFCvWLxrtI2") LIMIT 1;
+INSERT INTO `Roles` (`Role`) SELECT * FROM (SELECT "pSS2OK_oIxI0E4iakILWETrKxxdrRA==" AS `Role`) AS temp WHERE NOT EXISTS (SELECT `Role` FROM `Roles` WHERE `Role` = "8EUNPAs3EfgFCvWLxrtI2") LIMIT 1;
+
+SELECT * FROM `Roles`;

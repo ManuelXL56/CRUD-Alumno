@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pods-graphql-backend
+  namespace: production
+spec:
+  selector:
+    matchLabels:
+      app: graphql-backend
+  template:
+    metadata:
+      labels:
+        app: graphql-backend
+    spec:
+      containers:
+      # Module graphql backend auth
+      - name: module-auth-graphql
+        image: golang/module-auth-graphql
+        resources:
+          limits:
+            memory: "512Mi"
+            cpu: "250m"
+        ports:
+        - containerPort: 8080
+        imagePullPolicy: Never
+      # Module graphql backend auth
+      - name: module-manager-grud-graphql
+        image: golang/module-manager-grud-graphql
+        resources:
+          limits:
+            memory: "512Mi"
+            cpu: "250m"
+        ports:
+        - containerPort: 8081
+        imagePullPolicy: Never
+      restartPolicy: Always

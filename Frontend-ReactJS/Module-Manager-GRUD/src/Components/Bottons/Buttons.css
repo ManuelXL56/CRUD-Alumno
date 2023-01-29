@@ -1,0 +1,68 @@
+.BottonCancel {
+    background-color: red;
+    border: 1px solid black;
+    margin-right: 1.5rem;
+    margin-left: 1.5rem;
+}
+
+.BottonGreen {
+    margin: auto;
+    background-color: #28b463;
+    border: 1px solid #239b56;
+    border-radius: 15px;
+    display: inline-block;
+    cursor: pointer;
+    color: #fff;
+    font-family: Arial;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px 20px;
+    text-decoration: none;
+    text-shadow: 0px 0px 2px #2f6627;
+    cursor: pointer;
+}
+
+.BottonGreen:hover {
+    background-color: #58D68D;
+}
+
+.BottonBlue {
+    margin: auto;
+    @apply bg-blue-600;
+    @apply border-blue-700;
+    border-radius: 15px;
+    display: inline-block;
+    cursor: pointer;
+    color: #fff;
+    font-family: Arial;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px 20px;
+    text-decoration: none;
+    text-shadow: 0px 0px 2px #2f6627;
+    cursor: pointer;
+}
+
+.BottonBlue:hover {
+    @apply bg-blue-500;
+}
+
+.BottonRed {
+    background-color: #C0392B ;
+    border: 1px solid #A93226 ;
+    border-radius: 15px;
+    display: inline-block;
+    cursor: pointer;
+    color: #fff;
+    font-family: Arial;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px 20px;
+    text-decoration: none;
+    text-shadow: 0px 0px 2px #2f6627;
+    cursor: pointer;
+}
+
+.BottonRed:hover {
+    background-color: #D98880 ;
+}

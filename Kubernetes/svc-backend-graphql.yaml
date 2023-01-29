@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: svc-backend-graphql
+  namespace: production
+spec:
+  selector:
+    app: graphql-backend
+  ports:
+  - name: module-auth
+    port: 8080
+    targetPort: 8080
+  - name: module-manager-grud
+    port: 8081
+    targetPort: 8081
+  type: LoadBalancer

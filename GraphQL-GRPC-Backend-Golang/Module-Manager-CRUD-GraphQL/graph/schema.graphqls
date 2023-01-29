@@ -1,0 +1,52 @@
+# GraphQL schema example
+#
+# https://gqlgen.com/getting-started/
+
+type DataUser {
+	matricule:  String!
+	full_name: String!
+	mail:      String!
+	direction: String!
+	phone:    String!
+	role:      String!
+	publicKey: String!
+}
+
+type Result {
+	result: String!
+}
+
+input DataUser_Input {
+	matricule:  String!
+	password: String!
+	full_name: String!
+	mail:      String!
+	direction: String!
+	phone:    String!
+	role:      String!
+	publicKey: String!
+}
+
+input DataUser_Update_Input {
+	old_matricule:  String!
+	new_matricule:  String!
+	password: String!
+	full_name: String!
+	mail:      String!
+	direction: String!
+	phone:    String!
+	role:      String!
+	publicKey: String!
+}
+
+input DataChiper {
+	publicKey: String!
+	dataChiper: String!
+}
+
+type Mutation {
+	searchUser(input: DataChiper!): DataUser!
+	registerUser(input: DataUser_Input!): Result!
+	updateUser(input: DataUser_Update_Input!): Result!
+	deleteUser(input: DataChiper!): Result!
+}

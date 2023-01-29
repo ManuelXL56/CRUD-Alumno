@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: svc-backend-grpc
+  namespace: production
+spec:
+  selector:
+    app: backend-grpc
+  ports:
+  - name: encryption
+    port: 50051
+    targetPort: 50051
+  - name: users-db
+    port: 50052
+    targetPort: 50052
+  - name: token
+    port: 50053
+    targetPort: 50053
