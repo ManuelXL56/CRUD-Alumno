@@ -19,7 +19,7 @@ spec:
         resources:
           limits:
             memory: "512Mi"
-            cpu: "250m"
+            cpu: "500m"
         ports:
         - containerPort: 3000
         imagePullPolicy: Never
@@ -29,7 +29,7 @@ spec:
         resources:
           limits:
             memory: "512Mi"
-            cpu: "250m"
+            cpu: "500m"
         ports:
         - containerPort: 3001
         imagePullPolicy: Never

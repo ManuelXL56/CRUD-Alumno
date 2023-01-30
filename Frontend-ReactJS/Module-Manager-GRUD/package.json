@@ -9,7 +9,7 @@
     "preview": "vite preview",
     "serve": "pnpm run build && pnpm run preview --port 3001 --host",
     "wasm": "cd ./CreateENV && go run . && cd ../wasm && GOOS=js GOARCH=wasm go build -o ../public/main.wasm && cd .. && echo [compiled wasm successfully!]",
-    "play": "pnpm install & pnpm run wasm && pnpm run serve"
+    "play": "pnpm install && pnpm run wasm && pnpm run serve"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.2.1",
