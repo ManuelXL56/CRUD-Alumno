@@ -4,7 +4,7 @@ Requisitos del sistema
 4GB RAM
 4 CPUS
 
-#Como contruir y ejecutar el Sistsema
+# Como contruir y ejecutar el Sistsema
 
 Para este CRUD de Alumnos utiizamos docker Desktop y Kubernetes (puede utilizar otro controlador de contendores, pero tenga en cuenta que debe adaptar el controlador de ingress y cert-manager segun el controlador)
 
@@ -21,7 +21,7 @@ kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/
 
 
 
-#Clone el repositorio y ejecute estos comandos sobre la carpeta principa:
+# Clone el repositorio y ejecute estos comandos sobre la carpeta principa:
 
 docker build -t nodejs/module-manager-grud ./Frontend-ReactJS/Module-Manager-Grud
 
@@ -37,6 +37,8 @@ docker build -t golang/module-token-grpc ./GraphQL-GRPC-Backend-Golang/Module-To
 
 docker build -t python/module-db-users-grpc ./gRPC-DB-Python/Module-Users-DB-gRPC
 
+docker pull mysql:8.0
+
 
 
 #Entre a la carpeta /Kubernetes y ejecute lo siguientes comandos:
@@ -47,10 +49,18 @@ kubectl apply -f .
 
 
 
-#El sistema se ejecutara y contrura en automatico. Solo espere su ejeucion 
+# El sistema se ejecutara y contrura en automatico. Solo espere su ejeucion 
 
 Al Finalizar en un navegador al entrar en https://localhost/ o https://127.0.0.1/ deberia mostrar el sistemas ejecutandose
 
 El usuario principal e inicial es
   usurio: root
   Password: 12345678
+  
+  
+ # Para eliminar o resetear el sistema ejecute los siguientes comando:
+ kubectl delete ing --all --namespace production;
+kubectl delete cert-manager --all --namespace production;
+kubectl delete Secret --all --namespace production; 
+kubectl delete all --all --namespace production;
+kubectl delete pvc --all --namespace production; 
